@@ -1,8 +1,10 @@
-package daniel.brian.dairyfarmapp;
+package daniel.brian.dairyfarmapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import daniel.brian.dairyfarmapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
