@@ -57,7 +57,7 @@
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:hint="@string/pass"
-        android:inputType="text"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPass"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
@@ -75,6 +75,7 @@
         app:layout_constraintBottom_toBottomOf="@id/guidelineBottomForgotPass"/>
 
     <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="55dp"
         android:background="@drawable/blue_background"
