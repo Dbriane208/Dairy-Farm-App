@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_nav"
+    app:startDestination="@id/adminHomeFragment">
+
+    <fragment
+        android:id="@+id/adminHomeFragment"
+        android:name="daniel.brian.dairyfarmapp.admin.cow_details.AdminHomeFragment"
+        android:label="fragment_admin_home"
+        tools:layout="@layout/fragment_admin_home" >
+        <action
+            android:id="@+id/action_adminHomeFragment_to_cowsListFragment"
+            app:destination="@id/cowsListFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_milkProductionFragment"
+            app:destination="@id/milkProductionFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_healthFragment"
+            app:destination="@id/healthFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_cowBreedingFragment"
+            app:destination="@id/cowBreedingFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_financesFragment"
+            app:destination="@id/financesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cowsListFragment"
+        android:name="daniel.brian.dairyfarmapp.admin.cow_details.CowsListFragment"
+        android:label="fragment_cows_list"
+        tools:layout="@layout/fragment_cows_list" />
+    <fragment
+        android:id="@+id/milkProductionFragment"
+        android:name="daniel.brian.dairyfarmapp.admin.cow_details.MilkProductionFragment"
+        android:label="fragment_milk_production"
+        tools:layout="@layout/fragment_milk_production" />
+    <fragment
+        android:id="@+id/healthFragment"
+        android:name="daniel.brian.dairyfarmapp.admin.cow_details.HealthFragment"
+        android:label="fragment_health"
+        tools:layout="@layout/fragment_health" />
+    <fragment
+        android:id="@+id/cowBreedingFragment"
+        android:name="daniel.brian.dairyfarmapp.admin.cow_details.CowBreedingFragment"
+        android:label="fragment_cow_breeding"
+        tools:layout="@layout/fragment_cow_breeding" />
+    <fragment
+        android:id="@+id/financesFragment"
+        android:name="daniel.brian.dairyfarmapp.admin.cow_details.FinancesFragment"
+        android:label="fragment_finances"
+        tools:layout="@layout/fragment_finances" />
+</navigation>
