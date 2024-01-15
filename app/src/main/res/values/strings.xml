@@ -34,9 +34,9 @@
     <string name="earTag">Ear Tag</string>
     <string name="color">Cow Color</string>
     <string name="breed">Cow Breed</string>
-    <string name="dob">Cow D.O.B</string>
+    <string name="dob">Date of Birth</string>
     <string name="age">Cow Age</string>
-    <string name="wat">Cow W.A.T</string>
+    <string name="wat">Weight at Birth</string>
     <string name="save">Save</string>
     <string name="am">A.M Milk</string>
     <string name="noon">Noon Milk</string>
@@ -47,9 +47,9 @@
     <string name="diagnosis">Diagnosis</string>
     <string name="treat">Treatment</string>
     <string name="cost">Cost of Treatment</string>
-    <string name="vetName">Vetinary Name</string>
+    <string name="vetName">Veterinary Name</string>
     <string name="breedDate">Breeding Date</string>
-    <string name="pDate">Pregnacy Date</string>
+    <string name="pDate">Pregnancy Date</string>
     <string name="calved">Date Calved</string>
     <string name="usage">Usage Date</string>
     <string name="purpose">Purpose Used</string>
