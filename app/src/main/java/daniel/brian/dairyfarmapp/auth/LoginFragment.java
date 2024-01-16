@@ -65,14 +65,19 @@ public class LoginFragment extends Fragment {
                    startActivity(intent);
                    Snackbar.make(requireView(),"Logging as Admin Successful!",Snackbar.LENGTH_LONG).show();
                }else{
-                   boolean loginUser = authDB.loginUser(userEmail,userPassword);
-                   if(loginUser){
-                       Intent intent = new Intent(this.getContext(), EmployeeActivity.class);
-                       startActivity(intent);
-                       Snackbar.make(requireView(),"Login Successful!",Snackbar.LENGTH_LONG).show();
-                   }else{
-                       Snackbar.make(requireView(),"Invalid Credentials! Try Again!",Snackbar.LENGTH_LONG).show();
+                   if(userEmail.contains("@gmail.com") || userEmail.contains("@yahoo.com")){
+                       boolean loginUser = authDB.loginUser(userEmail,userPassword);
+                       if(loginUser){
+                           Intent intent = new Intent(this.getContext(), EmployeeActivity.class);
+                           startActivity(intent);
+                           Snackbar.make(requireView(),"Login Successful!",Snackbar.LENGTH_LONG).show();
+                       }else{
+                           Snackbar.make(requireView(),"Invalid Credentials! Try Again!",Snackbar.LENGTH_LONG).show();
+                       }
+                   }else {
+                       Snackbar.make(requireView(),"Oops!! Please Enter a valid Email!",Snackbar.LENGTH_LONG).show();
                    }
+
                }
             }
         });
