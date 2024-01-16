@@ -54,14 +54,19 @@ public class RegistrationFragment extends Fragment {
             if(firstname.isEmpty() || lastname.isEmpty() || userEmail.isEmpty() || userPassword.isEmpty()){
                 Snackbar.make(requireView(),"Please Enter All Fields!",Snackbar.LENGTH_LONG).show();
             }else{
-               boolean registerUser = authDB.registerUser(firstname,lastname,userEmail,userPassword);
-               if(registerUser){
-                   Snackbar.make(requireView(),"Yaay!! Registration Successful!",Snackbar.LENGTH_LONG).show();
-                   Intent intent = new Intent(this.getContext(), EmployeeActivity.class);
-                   startActivity(intent);
-               }else{
-                   Snackbar.make(requireView(),"Oops!! Registration Failed!. User already exists!",Snackbar.LENGTH_LONG).show();
-               }
+                if(userEmail.contains("@gmail.com") || userEmail.contains("@yahoo.com")){
+                    boolean registerUser = authDB.registerUser(firstname,lastname,userEmail,userPassword);
+                    if(registerUser){
+                        Snackbar.make(requireView(),"Yaay!! Registration Successful!",Snackbar.LENGTH_LONG).show();
+                        Intent intent = new Intent(this.getContext(), EmployeeActivity.class);
+                        startActivity(intent);
+                    }else{
+                        Snackbar.make(requireView(),"Oops!! Registration Failed!. User already exists!",Snackbar.LENGTH_LONG).show();
+                    }
+                }else{
+                    Snackbar.make(requireView(),"Oops!! Please Enter a valid Email!",Snackbar.LENGTH_LONG).show();
+                }
+
             }
         });
 

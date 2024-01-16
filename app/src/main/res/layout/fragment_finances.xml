@@ -102,6 +102,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
+        android:id="@+id/saveFinancesDetails"
         android:layout_width="290dp"
         android:layout_height="55dp"
         android:background="@drawable/blue_background"
