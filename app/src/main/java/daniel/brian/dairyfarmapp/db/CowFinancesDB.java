@@ -9,16 +9,17 @@ import androidx.annotation.Nullable;
 
 public class CowFinancesDB extends SQLiteOpenHelper {
     public CowFinancesDB(@Nullable Context context) {
-        super(context, "CowsFinances.db", null, 1);
+        super(context, "CowsFinances.db", null, 2);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
          db.execSQL("Create Table cowFinances(" +
-                 "Finance_id int primary key not null," +
+                 "Finance_id integer primary key not null," +
                  "Date DATE not null," +
-                 "Purpose varchar(10) not null," +
-                 "Amount Text not null)");
+                 "Purpose varchar(50) not null," +
+                 "Amount Text not null," +
+                 "constraint cowFinance unique(Finance_id,Date,Purpose,Amount))");
     }
 
     @Override

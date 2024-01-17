@@ -21,7 +21,7 @@ public class CowBreedingDB extends SQLiteOpenHelper {
               "Breed_date DATE not null," +
               "Pregnancy_date DATE not null," +
               "Date_calved DATE not null," +
-              "constraint cowBreed unique (CowBreed_id,Name))");
+              "constraint cowBreed unique (CowBreed_id,Name,Age))");
     }
 
     @Override
