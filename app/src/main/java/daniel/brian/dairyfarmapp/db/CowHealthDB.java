@@ -9,12 +9,12 @@ import androidx.annotation.Nullable;
 
 public class CowHealthDB extends SQLiteOpenHelper {
     public CowHealthDB(@Nullable Context context) {
-        super(context, "CowsHealth.db", null, 1);
+        super(context, "CowsHealth.db", null, 3);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("Create Table cowsHealth(" +
+        db.execSQL("Create Table cowHealth(" +
                 "CowHealth_id integer primary key not null," +
                 "Name varchar(10) not null," +
                 "Event varchar(20) not null," +
@@ -23,12 +23,12 @@ public class CowHealthDB extends SQLiteOpenHelper {
                 "Treatment varchar(50) not null," +
                 "Cost_of_Treatment Text not null," +
                 "VetName varchar(10) not null," +
-                "constraint cowHealth unique (CowHealth_id,Name))");
+                "constraint cowHealth unique(CowHealth_id,Name))");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-       db.execSQL("drop Table if exists cowsHealth");
+       db.execSQL("drop Table if exists cowHealth");
     }
 
     // saving the cows health Details
@@ -42,7 +42,7 @@ public class CowHealthDB extends SQLiteOpenHelper {
         contentValues.put("Treatment",treatment);
         contentValues.put("Cost_of_Treatment",costOfTreatment);
         contentValues.put("VetName",vetName);
-        long result = db.insert("cowsHealth",null,contentValues);
+        long result = db.insert("cowHealth",null,contentValues);
         return result != -1;
     }
 }

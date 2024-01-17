@@ -22,7 +22,7 @@ public class CowMilkProductionDB extends SQLiteOpenHelper {
                "PM_milk Text not null," +
                "Total Text not null," +
                "Date DATE not null," +
-               "constraint milkProduction unique(CowMilk_id,Name))");
+               "constraint milkProduction unique(CowMilk_id,Name,Date))");
     }
 
     @Override

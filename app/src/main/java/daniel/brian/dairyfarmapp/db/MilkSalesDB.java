@@ -9,19 +9,20 @@ import androidx.annotation.Nullable;
 
 public class MilkSalesDB extends SQLiteOpenHelper {
     public MilkSalesDB(@Nullable Context context) {
-        super(context, "MilkSale.db", null, 1);
+        super(context, "MilkSale.db", null, 2);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
        db.execSQL("Create Table milkSales(" +
-               "Employee_id int primary key not null," +
+               "Employee_id integer primary key not null," +
                "Date DATE not null," +
                "Client_Name varchar(10) not null," +
                "Client_Phone Text not null," +
                "Quantity Text not null," +
                "Price Text not null," +
-               "Total Text not null)");
+               "Total Text not null," +
+               "constraint sales unique(Employee_id,Client_Name,Client_Phone))");
     }
 
     @Override
