@@ -1,7 +1,9 @@
 package daniel.brian.dairyfarmapp.db;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -19,6 +21,7 @@ public class CowFinancesDB extends SQLiteOpenHelper {
                  "Date DATE not null," +
                  "Purpose varchar(50) not null," +
                  "Amount Text not null," +
+                 "Income Text not null," +
                  "constraint cowFinance unique(Finance_id,Date,Purpose,Amount))");
     }
 
@@ -28,13 +31,21 @@ public class CowFinancesDB extends SQLiteOpenHelper {
     }
 
     // function to save the Finances
-    public boolean SaveCowFinancesRecords(String date,String purpose,String amount){
+    public boolean SaveCowFinancesRecords(String date, String purpose, String amount, String income){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("Date",date);
         contentValues.put("Purpose",purpose);
         contentValues.put("Amount",amount);
-        long result = db.insert("cowFinances",null,contentValues);
-        return result != -1;
+        contentValues.put("Income",income);
+       long result =  db.insert("cowFinances",null,contentValues);
+       return result != -1;
+    }
+
+    public boolean CheckRedundantData(String date,String purpose){
+        SQLiteDatabase db = this.getWritableDatabase();
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery("select * from cowFinances where Date = ? and Purpose = ?",new String[]{date,purpose});
+        return cursor.getCount() > 0;
     }
 }

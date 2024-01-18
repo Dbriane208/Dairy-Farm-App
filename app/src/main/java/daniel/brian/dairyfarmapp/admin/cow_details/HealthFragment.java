@@ -41,11 +41,16 @@ public class HealthFragment extends Fragment {
             if(cowName.isEmpty() || event.isEmpty() || diagnosis.isEmpty() || date.isEmpty() || treatment.isEmpty() || costOfTreatment.isEmpty() || vetName.isEmpty()){
                 Snackbar.make(requireView(),"Please Enter Details in All Fields!",Snackbar.LENGTH_LONG).show();
             }else {
-                boolean cowHealth = cowHealthDB.SaveCowHealthRecords(cowName,event,diagnosis,date,treatment,costOfTreatment,vetName);
-                if(cowHealth){
-                    Snackbar.make(requireView(),"Cow Health Record Saved Successfully!",Snackbar.LENGTH_LONG).show();
-                }else{
+                boolean cowHealthRedundantData = cowHealthDB.CheckRedundantData(cowName,date);
+                if(cowHealthRedundantData){
                     Snackbar.make(requireView(),"Oops! Such details already exists!",Snackbar.LENGTH_LONG).show();
+                }else {
+                   boolean cowHealth = cowHealthDB.SaveCowHealthRecords(cowName,event,diagnosis,date,treatment,costOfTreatment,vetName);
+                   if(cowHealth){
+                       Snackbar.make(requireView(),"Cow Health Record Saved Successfully!",Snackbar.LENGTH_LONG).show();
+                   }else{
+                       Snackbar.make(requireView(),"Oops! Such details already exists!",Snackbar.LENGTH_LONG).show();
+                   }
                 }
             }
         });

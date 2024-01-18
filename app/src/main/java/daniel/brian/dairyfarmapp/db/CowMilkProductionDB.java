@@ -1,7 +1,9 @@
 package daniel.brian.dairyfarmapp.db;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -22,7 +24,7 @@ public class CowMilkProductionDB extends SQLiteOpenHelper {
                "PM_milk Text not null," +
                "Total Text not null," +
                "Date DATE not null," +
-               "constraint milkProduction unique(CowMilk_id,Name,Date))");
+               "constraint milkProduction unique(Name,Date))");
     }
 
     @Override
@@ -42,5 +44,12 @@ public class CowMilkProductionDB extends SQLiteOpenHelper {
         contentValues.put("Date",date);
         long result = db.insert("cowMilkProduction",null,contentValues);
         return result != -1;
+    }
+
+    public boolean CheckRedundantData(String name,String date){
+        SQLiteDatabase db = this.getWritableDatabase();
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery("select * from cowMilkProduction where Name = ? and Date = ?",new String[]{name,date});
+        return cursor.getCount() > 0;
     }
 }

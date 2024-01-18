@@ -52,7 +52,7 @@
     <string name="pDate">Pregnancy Date(YY/MM/DD)</string>
     <string name="calved">Date Calved(YY/MM/DD)</string>
     <string name="usage">Usage Date(YY/MM/DD)</string>
-    <string name="purpose">Purpose Used(eg Treatment)</string>
+    <string name="purpose">Expenditure (purpose money spent on)</string>
     <string name="amount">Amount Used(in KSH)</string>
     <string name="milk">Milk Sales</string>
     <string name="sell">Selling Date(YY/MM/DD)</string>
@@ -61,4 +61,8 @@
     <string name="quantity">Quantity(in Litres)</string>
     <string name="price">Price(in KSH per litre)</string>
     <string name="totalAmount">Total Amount(in KSH)</string>
+    <string name="income">Income(in KSH)</string>
+    <string name="loginAs">Login as :</string>
+    <string name="asAdmin">Admin</string>
+    <string name="asEmployee">Employee</string>
 </resources>

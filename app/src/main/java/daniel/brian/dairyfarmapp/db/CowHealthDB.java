@@ -1,7 +1,9 @@
 package daniel.brian.dairyfarmapp.db;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -32,7 +34,7 @@ public class CowHealthDB extends SQLiteOpenHelper {
     }
 
     // saving the cows health Details
-    public boolean SaveCowHealthRecords(String name,String event,String diagnosis,String date,String treatment,String costOfTreatment,String vetName){
+    public boolean SaveCowHealthRecords(String name, String event, String diagnosis, String date, String treatment, String costOfTreatment, String vetName){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("Name",name);
@@ -44,5 +46,12 @@ public class CowHealthDB extends SQLiteOpenHelper {
         contentValues.put("VetName",vetName);
         long result = db.insert("cowHealth",null,contentValues);
         return result != -1;
+    }
+
+    public boolean CheckRedundantData(String name,String date){
+        SQLiteDatabase db = this.getWritableDatabase();
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery("select * from cowHealth where Name = ? and Date = ?",new String[]{name,date});
+        return cursor.getCount() > 0;
     }
 }
