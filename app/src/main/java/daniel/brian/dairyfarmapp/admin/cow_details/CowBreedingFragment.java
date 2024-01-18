@@ -41,11 +41,16 @@ public class CowBreedingFragment extends Fragment {
             if(name.isEmpty() || age.isEmpty() || breedDate.isEmpty() || pregnancyDate.isEmpty() || dateCalved.isEmpty()){
                 Snackbar.make(requireView(),"Please Enter Details in All Fields!",Snackbar.LENGTH_LONG).show();
             }else{
-                boolean cowBreeding = cowBreedingDB.SaveCowBreedingRecords(name,age,breedDate,pregnancyDate,dateCalved);
-                if(cowBreeding){
-                    Snackbar.make(requireView(),"Cow Breeding Details Saved Successfully!",Snackbar.LENGTH_LONG).show();
-                } else{
+                boolean cowBreedingRedundantData = cowBreedingDB.CheckRedundantData(name,age);
+                if(cowBreedingRedundantData){
                     Snackbar.make(requireView(),"Oops! Such Details Already Exists!",Snackbar.LENGTH_LONG).show();
+                }else{
+                    boolean cowBreeding = cowBreedingDB.SaveCowBreedingRecords(name,age,breedDate,pregnancyDate,dateCalved);
+                    if(cowBreeding){
+                        Snackbar.make(requireView(),"Cow Breeding Details Saved Successfully!",Snackbar.LENGTH_LONG).show();
+                    }else{
+                        Snackbar.make(requireView(),"Oops! Such Details Already Exists!",Snackbar.LENGTH_LONG).show();
+                    }
                 }
             }
         });

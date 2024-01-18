@@ -34,9 +34,38 @@
         android:text="@string/login"
         style="@style/h3"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
-        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
         app:layout_constraintTop_toBottomOf="@id/guidelineBottomLogin"
         app:layout_constraintBottom_toBottomOf="@id/guidelineBottomReg"/>
+
+    <TextView
+        android:id="@+id/textLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/loginAs"
+        style="@style/h3"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomReg"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomCheckBox"/>
+
+    <CheckBox
+        android:id="@+id/asAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/asAdmin"
+        app:layout_constraintEnd_toStartOf="@id/asEmployee"
+        app:layout_constraintStart_toEndOf="@+id/textLogin"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomReg"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomCheckBox"/>
+
+    <CheckBox
+        android:id="@+id/asEmployee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/asEmployee"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomReg"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomCheckBox"/>
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/email"
@@ -48,7 +77,7 @@
         app:layout_constraintBottom_toBottomOf="@id/guidelineBottomEmail"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomReg"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomCheckBox"
         tools:ignore="TextContrastCheck" />
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -120,21 +149,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.39" />
+        app:layout_constraintGuide_percent="0.34" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.48" />
+        app:layout_constraintGuide_percent="0.43" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.53" />
+        app:layout_constraintGuide_percent="0.48" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.55" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomEmail"

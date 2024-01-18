@@ -36,11 +36,16 @@ public class EmployeeActivity extends AppCompatActivity {
             if(date.isEmpty() || clientName.isEmpty() || clientPhone.length() != 10 || quantity.isEmpty() || total.isEmpty() || price.isEmpty()){
                 Snackbar.make(Objects.requireNonNull(this.getCurrentFocus()),"Please Enter Details in All Fields!",Snackbar.LENGTH_LONG).show();
             }else{
-                boolean milkDetails = milkSalesDB.SaveMilkSalesRecords(date,clientName,clientPhone,quantity,price,total);
-                if(milkDetails){
-                    Snackbar.make(Objects.requireNonNull(this.getCurrentFocus()),"Milk Sales Details Saved Successfully!",Snackbar.LENGTH_LONG).show();
-                }else{
+                boolean sales = milkSalesDB.CheckRedundantData(clientName,clientPhone);
+                if(sales){
                     Snackbar.make(Objects.requireNonNull(this.getCurrentFocus()),"Oops! Such Details Already exists!",Snackbar.LENGTH_LONG).show();
+                }else{
+                    boolean milkDetails = milkSalesDB.SaveMilkSalesRecords(date,clientName,clientPhone,quantity,price,total);
+                    if(milkDetails){
+                        Snackbar.make(Objects.requireNonNull(this.getCurrentFocus()),"Milk Sales Details Saved Successfully!",Snackbar.LENGTH_LONG).show();
+                    }else{
+                        Snackbar.make(Objects.requireNonNull(this.getCurrentFocus()),"Oops! Such Details Already exists!",Snackbar.LENGTH_LONG).show();
+                    }
                 }
             }
         });

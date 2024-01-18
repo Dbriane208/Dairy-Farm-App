@@ -42,11 +42,16 @@ public class MilkProductionFragment extends Fragment {
             if(cowName.isEmpty() || amMilk.isEmpty() || noonMilk.isEmpty() || pmMilk.isEmpty() || totalMilk.isEmpty() || date.isEmpty()){
                 Snackbar.make(requireView(),"Please Enter Details in All Fields!",Snackbar.LENGTH_LONG).show();
             }else{
-                boolean milkProduce = cowMilkProductionDB.saveMilkProductionDetails(cowName,amMilk,noonMilk,pmMilk,totalMilk,date);
-                if(milkProduce){
-                    Snackbar.make(requireView(),"Milk Produce Details Saved Successfully!",Snackbar.LENGTH_LONG).show();
-                }else{
+                boolean checkMilkRedundantData = cowMilkProductionDB.CheckRedundantData(cowName,date);
+                if(checkMilkRedundantData){
                     Snackbar.make(requireView(),"Oops! Such Details Already Exists!",Snackbar.LENGTH_LONG).show();
+                }else{
+                    boolean milkProduction = cowMilkProductionDB.saveMilkProductionDetails(cowName,amMilk,noonMilk,pmMilk,totalMilk,date);
+                    if(milkProduction){
+                        Snackbar.make(requireView(),"Milk Produce Details Saved Successfully!",Snackbar.LENGTH_LONG).show();
+                    }else{
+                        Snackbar.make(requireView(),"Oops! Such Details Already Exists!",Snackbar.LENGTH_LONG).show();
+                    }
                 }
             }
         });

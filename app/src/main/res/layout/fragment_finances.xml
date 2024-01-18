@@ -101,6 +101,33 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomAmount"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomIncome">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/amountUsed"
+            android:text="@string/amount"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/incomePaid"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/income"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
         android:id="@+id/saveFinancesDetails"
         android:layout_width="290dp"
@@ -165,6 +192,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.53" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.63" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomTopSaveBtn"

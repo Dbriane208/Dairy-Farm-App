@@ -1,7 +1,9 @@
 package daniel.brian.dairyfarmapp.db;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -40,5 +42,12 @@ public class CowBreedingDB extends SQLiteOpenHelper {
         contentValues.put("Date_calved",dateCalved);
         long result = db.insert("cowBreeding",null,contentValues);
         return result != -1;
+    }
+
+    public boolean CheckRedundantData(String name,String age){
+        SQLiteDatabase db = this.getWritableDatabase();
+        @SuppressLint("Recycle")
+        Cursor cursor = db.rawQuery("select * from cowMilkProduction where Name = ? and Date = ?",new String[]{name,age});
+        return cursor.getCount() > 0;
     }
 }
