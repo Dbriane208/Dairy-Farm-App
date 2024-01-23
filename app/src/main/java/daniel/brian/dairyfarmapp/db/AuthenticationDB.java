@@ -16,7 +16,12 @@ public class AuthenticationDB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-      db.execSQL("Create Table users(firstName Text not null,lastName Text not null,email Text not null unique,password Text not null, constraint username unique (firstName,lastName,email))");
+      db.execSQL("Create Table users(" +
+              "firstName Text not null," +
+              "lastName Text not null," +
+              "email Text not null unique," +
+              "password Text not null, " +
+              "constraint username unique (firstName,lastName,email))");
     }
 
     @Override
@@ -41,5 +46,14 @@ public class AuthenticationDB extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         @SuppressLint("Recycle") Cursor cursor = db.rawQuery("select * from users where email = ? and password = ?",new String[]{email,password});
         return cursor.getCount() > 0;
+    }
+
+    // update password
+    public boolean UpdatePassword(String email,String password){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("password",password);
+        long forgotPass = db.update("users",contentValues,"email = ?",new String[]{email});
+        return forgotPass != -1;
     }
 }
