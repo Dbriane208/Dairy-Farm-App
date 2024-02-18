@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/blury_background"
-    tools:context=".admin.cow_details.MilkProductionFragment">
+    tools:context=".admin.birds_details.PoultryDetailsFragment">
 
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:title="@string/milkProd"
+        android:title="@string/poultry"
         android:titleTextAppearance="@style/h4"
         android:titleTextColor="@color/white"
         android:background="#32addf"
@@ -32,11 +32,11 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/cowName"
+            android:labelFor="@+id/layersBirds"
             android:text="@string/name"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/cowName"
+            android:id="@+id/layersBirds"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="@string/name"
@@ -54,19 +54,19 @@
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
         app:layout_constraintTop_toBottomOf="@id/guidelineBottomName"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomAmMilk">
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomEarTag">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/amMilk"
-            android:text="@string/am"/>
+            android:labelFor="@+id/broilerBirds"
+            android:text="@string/broilers"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/amMilk"
+            android:id="@+id/broilerBirds"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/am"
+            android:hint="@string/broilers"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -80,20 +80,20 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomAmMilk"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomNoonMilk">
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomEarTag"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomColor">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/noonMilk"
-            android:text="@string/noon"/>
+            android:labelFor="@+id/totalBirds"
+            android:text="@string/tBirds"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/noonMilk"
+            android:id="@+id/totalBirds"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/noon"
+            android:hint="@string/tBirds"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -107,20 +107,20 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomNoonMilk"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPmMilk">
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomColor"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomBreed">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/pmMilk"
-            android:text="@string/pm"/>
+            android:labelFor="@+id/dateOfAcquisition"
+            android:text="@string/doa"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/pmMilk"
+            android:id="@+id/dateOfAcquisition"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/pm"
+            android:hint="@string/doa"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -134,20 +134,20 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPmMilk"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomTotalMilk">
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomBreed"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomDOB">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/totalMilk"
-            android:text="@string/total"/>
+            android:labelFor="@+id/typeOfAcquisition"
+            android:text="@string/toa"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/totalMilk"
+            android:id="@+id/typeOfAcquisition"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/total"
+            android:hint="@string/toa"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -161,20 +161,20 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomTotalMilk"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomDate">
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomDOB"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomAge">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/milkProdDate"
-            android:text="@string/date"/>
+            android:labelFor="@+id/costOfAcquisition"
+            android:text="@string/coa"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/milkProdDate"
+            android:id="@+id/costOfAcquisition"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/date"
+            android:hint="@string/coa"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -183,7 +183,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
-        android:id="@+id/saveMilkProdDetails"
+        android:id="@+id/saveCowDetails"
         android:layout_width="290dp"
         android:layout_height="55dp"
         android:background="@drawable/blue_background"
@@ -195,7 +195,7 @@
         app:layout_constraintBottom_toBottomOf="@id/guidelineMrgBottom"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomDate"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomWAT"
         tools:ignore="TextContrastCheck" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -203,14 +203,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05" />
+        app:layout_constraintGuide_percent="0.06" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMrgEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95" />
+        app:layout_constraintGuide_percent="0.94" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMrgTop"
@@ -224,54 +224,62 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.18"/>
+        app:layout_constraintGuide_percent="0.15" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.28" />
+        app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomAmMilk"
+        android:id="@+id/guidelineBottomEarTag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.38" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomNoonMilk"
+        android:id="@+id/guidelineBottomColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.48" />
+        app:layout_constraintGuide_percent="0.45" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomPmMilk"
+        android:id="@+id/guidelineBottomBreed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.58" />
+        app:layout_constraintGuide_percent="0.55" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomTotalMilk"
+        android:id="@+id/guidelineBottomDOB"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.68" />
+        app:layout_constraintGuide_percent="0.65" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomDate"
+        android:id="@+id/guidelineBottomAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.78" />
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomWAT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMrgBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.94" />
+        app:layout_constraintGuide_percent="0.97" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

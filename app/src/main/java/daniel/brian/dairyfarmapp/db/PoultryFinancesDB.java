@@ -9,8 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class CowFinancesDB extends SQLiteOpenHelper {
-    public CowFinancesDB(@Nullable Context context) {
+public class PoultryFinancesDB extends SQLiteOpenHelper {
+    public PoultryFinancesDB(@Nullable Context context) {
         super(context, "CowsFinances.db", null, 2);
     }
 

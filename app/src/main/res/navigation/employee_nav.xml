@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/employee_nav"
+    app:startDestination="@id/employeeHomeFragment">
+
+    <fragment
+        android:id="@+id/employeeHomeFragment"
+        android:name="daniel.brian.dairyfarmapp.employee.EmployeeHomeFragment"
+        android:label="fragment_employee_home"
+        tools:layout="@layout/fragment_employee_home" >
+        <action
+            android:id="@+id/action_employeeHomeFragment_to_eggsSalesFragment"
+            app:destination="@id/eggsSalesFragment" />
+        <action
+            android:id="@+id/action_employeeHomeFragment_to_chickenSalesFragment"
+            app:destination="@id/chickenSalesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eggsSalesFragment"
+        android:name="daniel.brian.dairyfarmapp.employee.EggsSalesFragment"
+        android:label="fragment_eggs_sales"
+        tools:layout="@layout/fragment_eggs_sales" />
+    <fragment
+        android:id="@+id/chickenSalesFragment"
+        android:name="daniel.brian.dairyfarmapp.employee.ChickenSalesFragment"
+        android:label="fragment_chicken_sales"
+        tools:layout="@layout/fragment_chicken_sales" />
+</navigation>

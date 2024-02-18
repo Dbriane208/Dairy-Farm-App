@@ -1,4 +1,4 @@
-package daniel.brian.dairyfarmapp.admin.cow_details;
+package daniel.brian.dairyfarmapp.admin.birds_details;
 
 import android.os.Bundle;
 
@@ -24,31 +24,31 @@ public class AdminHomeFragment extends Fragment {
 
         // adding the buttons logic
         // cowList fragment
-        fragmentAdminHomeBinding.cowListAdd.setOnClickListener(view -> {
+        fragmentAdminHomeBinding.poultryDetailsAdd.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(view);
             navController.navigate(R.id.action_adminHomeFragment_to_cowsListFragment);
         });
 
         // milk Prod fragment
-        fragmentAdminHomeBinding.milkProdAdd.setOnClickListener(view -> {
+        fragmentAdminHomeBinding.poultryProdAdd.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(view);
             navController.navigate(R.id.action_adminHomeFragment_to_milkProductionFragment);
         });
 
         // cow health
-        fragmentAdminHomeBinding.cowHealthAdd.setOnClickListener(view -> {
+        fragmentAdminHomeBinding.poultryHealthAdd.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(view);
             navController.navigate(R.id.action_adminHomeFragment_to_healthFragment);
         });
 
         // cow breeding
-        fragmentAdminHomeBinding.cowBreedAdd.setOnClickListener(view -> {
+        fragmentAdminHomeBinding.poultryFeedAdd.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(view);
             navController.navigate(R.id.action_adminHomeFragment_to_cowBreedingFragment);
         });
 
         //finances
-        fragmentAdminHomeBinding.cowFinancesAdd.setOnClickListener(view -> {
+        fragmentAdminHomeBinding.poultryFinancesAdd.setOnClickListener(view -> {
             NavController navController = Navigation.findNavController(view);
             navController.navigate(R.id.action_adminHomeFragment_to_financesFragment);
         });
