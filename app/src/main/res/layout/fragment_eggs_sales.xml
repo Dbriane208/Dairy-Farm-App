@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/blury_background"
-    tools:context=".admin.cow_details.FinancesFragment">
+    tools:context=".employee.EggsSalesFragment">
 
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:title="@string/finances"
-        android:titleTextAppearance="@style/h4"
-        android:titleTextColor="@color/white"
+        android:title="@string/eggs"
         android:background="#32addf"
-        android:titleMarginStart="50dp"
+        android:titleTextColor="@color/white"
+        android:titleMarginStart="90dp"
+        android:titleTextAppearance="@style/h4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,14 +32,14 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/usageDate"
-            android:text="@string/usage"/>
+            android:labelFor="@+id/sellingDate"
+            android:text="@string/sell"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/usageDate"
+            android:id="@+id/eggsSellingDate"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/usage"
+            android:hint="@string/sell"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -54,19 +54,19 @@
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
         app:layout_constraintTop_toBottomOf="@id/guidelineBottomDate"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPurpose">
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomClientName">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/purpose"
-            android:text="@string/purpose"/>
+            android:labelFor="@+id/clientName"
+            android:text="@string/cName"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/purpose"
+            android:id="@+id/eggsClientName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/purpose"
+            android:hint="@string/cName"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -80,20 +80,20 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPurpose"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomAmount">
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomClientName"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomClientPhone">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/amountUsed"
-            android:text="@string/amount"/>
+            android:labelFor="@+id/clientPhone"
+            android:text="@string/phone"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/amountUsed"
+            android:id="@+id/eggsClientPhone"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/amount"
+            android:hint="@string/phone"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -107,20 +107,74 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomAmount"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomIncome">
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomClientPhone"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomQuantity">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/amountUsed"
-            android:text="@string/amount"/>
+            android:labelFor="@+id/quantity"
+            android:text="@string/quantity"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/incomePaid"
+            android:id="@+id/eggsQuantity"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/income"
+            android:hint="@string/quantity"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomQuantity"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPrice">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/price"
+            android:text="@string/price"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/eggsPrice"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/price"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPrice"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomTotal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/total"
+            android:text="@string/totalAmount"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/eggsTotal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/totalAmount"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -129,7 +183,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
-        android:id="@+id/saveFinancesDetails"
+        android:id="@+id/saveEggsSales"
         android:layout_width="290dp"
         android:layout_height="55dp"
         android:background="@drawable/blue_background"
@@ -141,7 +195,7 @@
         app:layout_constraintBottom_toBottomOf="@id/guidelineMrgBottom"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomTopSaveBtn"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomTotal"
         tools:ignore="TextContrastCheck" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -149,69 +203,76 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05" />
+        app:layout_constraintGuide_percent="0.06" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMrgEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95" />
+        app:layout_constraintGuide_percent="0.94" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMrgTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.09" />
+        app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTopDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.23" />
+        app:layout_constraintGuide_percent="0.16" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.33" />
+        app:layout_constraintGuide_percent="0.27" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomPurpose"
+        android:id="@+id/guidelineBottomClientName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.43" />
+        app:layout_constraintGuide_percent="0.38" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomAmount"
+        android:id="@+id/guidelineBottomClientPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.53" />
+        app:layout_constraintGuide_percent="0.49" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomIncome"
+        android:id="@+id/guidelineBottomQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.63" />
+        app:layout_constraintGuide_percent="0.6" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomTopSaveBtn"
+        android:id="@+id/guidelineBottomPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.77" />
+        app:layout_constraintGuide_percent="0.71" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.82" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMrgBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.90" />
+        app:layout_constraintGuide_percent="0.98" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

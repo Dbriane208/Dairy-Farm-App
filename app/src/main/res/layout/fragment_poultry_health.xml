@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/blury_background"
-    tools:context=".admin.cow_details.CowBreedingFragment">
+    tools:context=".admin.birds_details.PoultryHealthFragment">
 
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:title="@string/cowBreeding"
+        android:title="@string/health"
         android:titleTextAppearance="@style/h4"
         android:titleTextColor="@color/white"
         android:background="#32addf"
@@ -32,14 +32,14 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/cowName"
-            android:text="@string/name"/>
+            android:labelFor="@+id/collectionArea"
+            android:text="@string/involved"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/cowName"
+            android:id="@+id/collectionArea"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/name"
+            android:hint="@string/involved"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -54,19 +54,19 @@
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
         app:layout_constraintTop_toBottomOf="@id/guidelineBottomName"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomAge">
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomEvent">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/cowAge"
-            android:text="@string/age"/>
+            android:labelFor="@+id/healthEvent"
+            android:text="@string/diseaseType"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/cowAge"
+            android:id="@+id/disease"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/age"
+            android:hint="@string/diseaseType"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -80,20 +80,20 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomAge"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomBreedDate">
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomEvent"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomDiagnosis">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/breedDate"
-            android:text="@string/breedDate"/>
+            android:labelFor="@+id/vaccineName"
+            android:text="@string/vaccine"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/breedDate"
+            android:id="@+id/vaccineName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/breedDate"
+            android:hint="@string/vaccine"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -107,20 +107,20 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomBreedDate"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPDate">
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomDiagnosis"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomDate">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/pregnancyDate"
-            android:text="@string/pDate"/>
+            android:labelFor="@+id/healthDate"
+            android:text="@string/date"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/pregnancyDate"
+            android:id="@+id/healthDate"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/pDate"
+            android:hint="@string/date"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -134,20 +134,74 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPDate"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomDateCalved">
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomDate"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomTreat">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/dateCalved"
-            android:text="@string/calved"/>
+            android:labelFor="@+id/birdsAffected"
+            android:text="@string/affected"/>
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/dateCalved"
+            android:id="@+id/birdsAffected"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/calved"
+            android:hint="@string/affected"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomTreat"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomCostTreat">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/treatmentCost"
+            android:text="@string/cost"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/treatmentCost"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/cost"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomCostTreat"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomVet">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/vetName"
+            android:text="@string/vetName"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/vetName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/vetName"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -156,7 +210,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
-        android:id="@+id/saveBreedingDetails"
+        android:id="@+id/saveHealthDetails"
         android:layout_width="290dp"
         android:layout_height="55dp"
         android:background="@drawable/blue_background"
@@ -168,7 +222,7 @@
         app:layout_constraintBottom_toBottomOf="@id/guidelineMrgBottom"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomDateCalved"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomVet"
         tools:ignore="TextContrastCheck" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -197,49 +251,63 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.14" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_percent="0.24" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomAge"
+        android:id="@+id/guidelineBottomEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.34" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomBreedDate"
+        android:id="@+id/guidelineBottomDiagnosis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.44" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomPDate"
+        android:id="@+id/guidelineBottomDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.6" />
+        app:layout_constraintGuide_percent="0.54" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomDateCalved"
+        android:id="@+id/guidelineBottomTreat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7" />
+        app:layout_constraintGuide_percent="0.64" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomCostTreat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.74" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomVet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.84" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMrgBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.91" />
+        app:layout_constraintGuide_percent="0.97" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

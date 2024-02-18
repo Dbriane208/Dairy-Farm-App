@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/adminHomeFragment"
-        android:name="daniel.brian.dairyfarmapp.admin.cow_details.AdminHomeFragment"
+        android:name="daniel.brian.dairyfarmapp.admin.birds_details.AdminHomeFragment"
         android:label="fragment_admin_home"
         tools:layout="@layout/fragment_admin_home" >
         <action
@@ -28,27 +28,27 @@
     </fragment>
     <fragment
         android:id="@+id/cowsListFragment"
-        android:name="daniel.brian.dairyfarmapp.admin.cow_details.CowsListFragment"
+        android:name="daniel.brian.dairyfarmapp.admin.birds_details.PoultryDetailsFragment"
         android:label="fragment_cows_list"
-        tools:layout="@layout/fragment_cows_list" />
+        tools:layout="@layout/fragment_poultry_details" />
     <fragment
         android:id="@+id/milkProductionFragment"
-        android:name="daniel.brian.dairyfarmapp.admin.cow_details.MilkProductionFragment"
+        android:name="daniel.brian.dairyfarmapp.admin.birds_details.PoultryProductionFragment"
         android:label="fragment_milk_production"
-        tools:layout="@layout/fragment_milk_production" />
+        tools:layout="@layout/fragment_poultry_production" />
     <fragment
         android:id="@+id/healthFragment"
-        android:name="daniel.brian.dairyfarmapp.admin.cow_details.HealthFragment"
+        android:name="daniel.brian.dairyfarmapp.admin.birds_details.PoultryHealthFragment"
         android:label="fragment_health"
-        tools:layout="@layout/fragment_health" />
+        tools:layout="@layout/fragment_poultry_health" />
     <fragment
         android:id="@+id/cowBreedingFragment"
-        android:name="daniel.brian.dairyfarmapp.admin.cow_details.CowBreedingFragment"
+        android:name="daniel.brian.dairyfarmapp.admin.birds_details.PoultryFeedingFragment"
         android:label="fragment_cow_breeding"
-        tools:layout="@layout/fragment_cow_breeding" />
+        tools:layout="@layout/fragment_poultry_feeding" />
     <fragment
         android:id="@+id/financesFragment"
-        android:name="daniel.brian.dairyfarmapp.admin.cow_details.FinancesFragment"
+        android:name="daniel.brian.dairyfarmapp.admin.birds_details.PoultryFinancesFragment"
         android:label="fragment_finances"
-        tools:layout="@layout/fragment_finances" />
+        tools:layout="@layout/fragment_poultry_finances" />
 </navigation>

@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/blury_background"
-    tools:context=".admin.birds_details.AdminHomeFragment">
+    tools:context=".employee.EmployeeHomeFragment">
 
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:title="@string/admin"
+        android:title="@string/employee"
         android:background="#32addf"
         android:titleTextColor="@color/white"
         android:titleMarginStart="45dp"
@@ -44,12 +44,12 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="24sp"
-                android:layout_marginEnd="90dp"
-                android:text="@string/poultry"
+                android:layout_marginEnd="117dp"
+                android:text="@string/eggsSale"
                 android:layout_weight="1"/>
 
             <ImageView
-                android:id="@+id/poultryDetailsAdd"
+                android:id="@+id/eggsSaleAdd"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
@@ -85,12 +85,12 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:textSize="24sp"
-                android:layout_marginEnd="44dp"
-                android:text="@string/poultryProd"
+                android:layout_marginEnd="83dp"
+                android:text="@string/meatSales"
                 android:layout_weight="1"/>
 
             <ImageView
-                android:id="@+id/poultryProdAdd"
+                android:id="@+id/chickenSalesAdd"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
@@ -101,130 +101,6 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="62dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="5dp"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
-        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toTopOf="@id/guidelineBottomMilkProd"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomHealth">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
-            tools:ignore="UseCompoundDrawables">
-
-            <TextView
-                style="@style/h3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="24sp"
-                android:layout_marginEnd="96dp"
-                android:text="@string/health"
-                android:layout_weight="1"/>
-
-            <ImageView
-                android:id="@+id/poultryHealthAdd"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/add_button"
-                tools:ignore="ImageContrastCheck" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="62dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="5dp"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
-        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toTopOf="@id/guidelineBottomHealth"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomCowBreeding">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
-            tools:ignore="UseCompoundDrawables">
-
-            <TextView
-                style="@style/h3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="24sp"
-                android:layout_marginEnd="80dp"
-                android:text="@string/foodM"
-                android:layout_weight="1"/>
-
-            <ImageView
-                android:id="@+id/poultryFeedAdd"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/add_button"
-                tools:ignore="ImageContrastCheck" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="62dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="5dp"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
-        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toTopOf="@id/guidelineBottomCowBreeding"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomFinances">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
-            tools:ignore="UseCompoundDrawables">
-
-            <TextView
-                style="@style/h3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:textSize="24sp"
-                android:layout_marginEnd="71dp"
-                android:text="@string/finances"
-                android:layout_weight="1"/>
-
-            <ImageView
-                android:id="@+id/poultryFinancesAdd"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/add_button"
-                tools:ignore="ImageContrastCheck" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMrgStart"
