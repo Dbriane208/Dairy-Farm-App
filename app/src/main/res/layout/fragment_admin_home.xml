@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blury_background"
+    android:background="#33A5DDFE"
     tools:context=".admin.birds_details.AdminHomeFragment">
 
     <Toolbar
