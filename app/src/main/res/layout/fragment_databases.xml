@@ -5,56 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#33A5DDFE"
-    tools:context=".admin.birds_details.AdminHomeFragment">
+    tools:context=".admin.birds_details.DatabasesFragment">
 
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:title="@string/admin"
         android:background="#32addf"
-        android:titleTextColor="@color/white"
+        android:title="@string/db"
         android:titleMarginStart="45dp"
         android:titleTextAppearance="@style/h4"
-        app:layout_constraintStart_toStartOf="parent"
+        android:titleTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineMrgTop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineMrgTop"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="62dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPoultryDetails"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toTopOf="@id/guidelineTopCowsList"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomCowsList">
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineMrgTop">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="20dp"
+            android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
             <TextView
                 style="@style/h3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:layout_marginEnd="70dp"
+                android:layout_weight="1"
+                android:text="@string/poultryDetailsDB"
                 android:textSize="24sp"
-                android:layout_marginEnd="90dp"
-                android:text="@string/poultry"
-                android:layout_weight="1"/>
+                android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/poultryDetailsAdd"
+                android:id="@+id/poultryDetailsView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/add_button"
+                android:src="@drawable/arrow_icon"
                 tools:ignore="ImageContrastCheck" />
 
         </LinearLayout>
@@ -66,36 +66,36 @@
         android:layout_height="62dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPoultryProduction"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toTopOf="@id/guidelineBottomCowsList"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomMilkProd">
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPoultryDetails">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="20dp"
+            android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
             <TextView
                 style="@style/h3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:text="@string/poultryProdDb"
                 android:textSize="24sp"
-                android:layout_marginEnd="44dp"
-                android:text="@string/poultryProd"
-                android:layout_weight="1"/>
+                android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/poultryProdAdd"
+                android:id="@+id/poultryProdView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/add_button"
+                android:src="@drawable/arrow_icon"
                 tools:ignore="ImageContrastCheck" />
 
         </LinearLayout>
@@ -107,36 +107,36 @@
         android:layout_height="62dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPoultryHealth"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toTopOf="@id/guidelineBottomMilkProd"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomHealth">
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPoultryProduction">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="20dp"
+            android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
             <TextView
                 style="@style/h3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:layout_marginEnd="70dp"
+                android:layout_weight="1"
+                android:text="@string/poultryHealth"
                 android:textSize="24sp"
-                android:layout_marginEnd="96dp"
-                android:text="@string/health"
-                android:layout_weight="1"/>
+                android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/poultryHealthAdd"
+                android:id="@+id/poultryHealthView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/add_button"
+                android:src="@drawable/arrow_icon"
                 tools:ignore="ImageContrastCheck" />
 
         </LinearLayout>
@@ -148,36 +148,36 @@
         android:layout_height="62dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPoultryFeeding"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toTopOf="@id/guidelineBottomHealth"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomCowBreeding">
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPoultryHealth">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="20dp"
+            android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
             <TextView
                 style="@style/h3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:layout_marginEnd="50dp"
+                android:layout_weight="1"
+                android:text="@string/poultryFeeding"
                 android:textSize="24sp"
-                android:layout_marginEnd="80dp"
-                android:text="@string/foodM"
-                android:layout_weight="1"/>
+                android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/poultryFeedAdd"
+                android:id="@+id/poultryFeedingView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/add_button"
+                android:src="@drawable/arrow_icon"
                 tools:ignore="ImageContrastCheck" />
 
         </LinearLayout>
@@ -189,36 +189,36 @@
         android:layout_height="62dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPoultryFinancesReport"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toTopOf="@id/guidelineBottomCowBreeding"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomFinances">
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPoultryFeeding">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="20dp"
+            android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
             <TextView
                 style="@style/h3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:layout_marginEnd="40dp"
+                android:layout_weight="1"
+                android:text="@string/poultryFinances"
                 android:textSize="24sp"
-                android:layout_marginEnd="71dp"
-                android:text="@string/finances"
-                android:layout_weight="1"/>
+                android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/poultryFinancesAdd"
+                android:id="@+id/poultryFinancesView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/add_button"
+                android:src="@drawable/arrow_icon"
                 tools:ignore="ImageContrastCheck" />
 
         </LinearLayout>
@@ -230,41 +230,124 @@
         android:layout_height="62dp"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPoultryEggsSale"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toTopOf="@id/guidelineBottomFinances"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineMrgBottom">
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPoultryFinancesReport">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="20dp"
+            android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
             <TextView
                 style="@style/h3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:layout_marginEnd="30dp"
+                android:layout_weight="1"
+                android:text="@string/poultryEggsSale"
                 android:textSize="24sp"
-                android:layout_marginEnd="80dp"
-                android:text="@string/databases"
-                android:layout_weight="1"/>
+                android:textStyle="bold" />
 
             <ImageView
-                android:id="@+id/databasesAdd"
+                android:id="@+id/poultryEggsSaleView"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/add_button"
+                android:src="@drawable/arrow_icon"
                 tools:ignore="ImageContrastCheck" />
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPoultryChickenSales"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPoultryEggsSale">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <TextView
+                style="@style/h3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="70dp"
+                android:layout_weight="1"
+                android:text="@string/poultryChickenSales"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/poultryChickenSalesView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/arrow_icon"
+                tools:ignore="ImageContrastCheck" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomEmployeeDetails"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPoultryChickenSales">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:orientation="horizontal"
+            tools:ignore="UseCompoundDrawables">
+
+            <TextView
+                style="@style/h3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:layout_weight="1"
+                android:text="@string/employeeDb"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/employeeDetailsView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/arrow_icon"
+                tools:ignore="ImageContrastCheck" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMrgStart"
@@ -288,52 +371,66 @@
         app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTopCowsList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.17" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomCowsList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomMilkProd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.42" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomHealth"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.53" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomCowBreeding"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.65" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBottomFinances"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.76" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMrgBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
+        app:layout_constraintGuide_percent="0.94" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomPoultryDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.21" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomPoultryProduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.31" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomPoultryHealth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.41" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomPoultryFeeding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.51" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomPoultryFinancesReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.61" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomPoultryEggsSale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.71" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomPoultryChickenSales"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.81" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomEmployeeDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.91" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_adminHomeFragment_to_financesFragment"
             app:destination="@id/financesFragment" />
+        <action
+            android:id="@+id/action_adminHomeFragment_to_databasesFragment2"
+            app:destination="@id/databasesFragment2" />
     </fragment>
     <fragment
         android:id="@+id/cowsListFragment"
@@ -51,4 +54,9 @@
         android:name="daniel.brian.dairyfarmapp.admin.birds_details.PoultryFinancesFragment"
         android:label="fragment_finances"
         tools:layout="@layout/fragment_poultry_finances" />
+    <fragment
+        android:id="@+id/databasesFragment2"
+        android:name="daniel.brian.dairyfarmapp.admin.birds_details.DatabasesFragment"
+        android:label="fragment_databases"
+        tools:layout="@layout/fragment_databases" />
 </navigation>

@@ -32,6 +32,10 @@ public class PoultryProductionFragment extends Fragment {
         // saving the milk production details
         poultryProductionBinding.savePoultryProdDetails.setOnClickListener(view -> {
             //access the details
+            String batch = Objects.requireNonNull(poultryProductionBinding.batchProd.getText()).toString();
+            String meatP = Objects.requireNonNull(poultryProductionBinding.meatProd.getText()).toString();
+            String servedBy= Objects.requireNonNull(poultryProductionBinding.meatPerson.getText()).toString();
+            String time = Objects.requireNonNull(poultryProductionBinding.meatTime.getText()).toString();
             String type = Objects.requireNonNull(poultryProductionBinding.collectionType.getText()).toString();
             String date = Objects.requireNonNull(poultryProductionBinding.collectionDate.getText()).toString();
             String eggsCollected = Objects.requireNonNull(poultryProductionBinding.collectedEggs.getText()).toString();
@@ -39,14 +43,16 @@ public class PoultryProductionFragment extends Fragment {
             String brokenE = Objects.requireNonNull(poultryProductionBinding.brokenEggs.getText()).toString();
             String trays = Objects.requireNonNull(poultryProductionBinding.traysCollected.getText()).toString();
 
-            if(type.isEmpty() || date.isEmpty() || eggsCollected.isEmpty() || goodE.isEmpty() || brokenE.isEmpty() || trays.isEmpty()){
+            if(batch.isEmpty() || meatP.isEmpty() || servedBy.isEmpty() || time.isEmpty() ||
+                    type.isEmpty() || date.isEmpty() || eggsCollected.isEmpty() || goodE.isEmpty() ||
+                    brokenE.isEmpty() || trays.isEmpty()){
                 Snackbar.make(requireView(),"Please Enter Details in All Fields!",Snackbar.LENGTH_LONG).show();
             }else{
                 boolean checkMilkRedundantData = poultryProductionDB.CheckRedundantData(type,date);
                 if(checkMilkRedundantData){
                     Snackbar.make(requireView(),"Oops! Such Details Already Exists!",Snackbar.LENGTH_LONG).show();
                 }else{
-                    boolean milkProduction = poultryProductionDB.savePoultryProductionDetails(type,date,eggsCollected,goodE,brokenE,trays);
+                    boolean milkProduction = poultryProductionDB.savePoultryProductionDetails(batch,meatP,servedBy,time,type,date,eggsCollected,goodE,brokenE,trays);
                     if(milkProduction){
                         Snackbar.make(requireView(),"Poultry Produce Details Saved Successfully!",Snackbar.LENGTH_LONG).show();
                     }else{

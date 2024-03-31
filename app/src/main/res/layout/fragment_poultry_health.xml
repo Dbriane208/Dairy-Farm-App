@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blury_background"
+    android:background="#33A5DDFE"
     tools:context=".admin.birds_details.PoultryHealthFragment">
 
     <Toolbar
@@ -26,6 +26,33 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTopBatch"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomName">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/batch"
+            android:text="@string/batchName"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/batch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/batchName"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
         app:layout_constraintTop_toBottomOf="@id/guidelineTopName"
         app:layout_constraintBottom_toBottomOf="@id/guidelineBottomName">
 
@@ -40,6 +67,33 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="@string/involved"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomNameVac"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomName">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/vacOrMed"
+            android:text="@string/Vac"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/vacOrMed"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/Vac"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -247,60 +301,74 @@
         app:layout_constraintGuide_percent="0.09" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTopBatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.09" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTopName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.14" />
+        app:layout_constraintGuide_percent="0.18" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomNameVac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.28" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.24" />
+        app:layout_constraintGuide_percent="0.37" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.34" />
+        app:layout_constraintGuide_percent="0.46" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomDiagnosis"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.44" />
+        app:layout_constraintGuide_percent="0.54" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.54" />
+        app:layout_constraintGuide_percent="0.62" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomTreat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.64" />
+        app:layout_constraintGuide_percent="0.71" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomCostTreat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.74" />
+        app:layout_constraintGuide_percent="0.79" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomVet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.84" />
+        app:layout_constraintGuide_percent="0.89" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMrgBottom"

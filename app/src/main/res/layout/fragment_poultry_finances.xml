@@ -4,36 +4,198 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/blury_background"
+    android:background="#33A5DDFE"
     tools:context=".admin.birds_details.PoultryFinancesFragment">
 
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="#32addf"
         android:title="@string/finances"
+        android:titleMarginStart="50dp"
         android:titleTextAppearance="@style/h4"
         android:titleTextColor="@color/white"
-        android:background="#32addf"
-        android:titleMarginStart="50dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineMrgTop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineMrgTop"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomMedExpense"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toBottomOf="@id/guidelineTopDate"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomDate">
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineMrgTop">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/medExpense"
+            android:text="@string/med" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/medExpense"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/med"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomFedExpense"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomMedExpense">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/feedExpense"
+            android:text="@string/feeds" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/feedExpense"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/feeds"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomLabourExpense"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomFedExpense">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/labourExpense"
+            android:text="@string/labour" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/labourExpense"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/labour"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomMaintenanceExpense"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomLabourExpense">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/maintenanceExpense"
+            android:text="@string/maintenance" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/maintenanceExpense"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/maintenance"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomMeatIncome"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomMaintenanceExpense">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/eggsIncome"
+            android:text="@string/eggs" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/eggsIncome"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/eggs"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineTopDate"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomMeatIncome">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:labelFor="@+id/meatIncome"
+            android:text="@string/meat" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/meatIncome"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/meat"
+            android:textColor="@color/black"
+            android:textColorHighlight="#32addf"
+            android:textColorHint="#546E7A"
+            tools:ignore="TextContrastCheck" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomDate"
+        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineTopDate">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:labelFor="@+id/usageDate"
-            android:text="@string/usage"/>
+            android:text="@string/usage" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/usageDate"
@@ -48,19 +210,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPurpose"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomDate"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPurpose">
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomDate">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:labelFor="@+id/purpose"
-            android:text="@string/purpose"/>
+            android:text="@string/purpose" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/purpose"
@@ -75,19 +237,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomAmount"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPurpose"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomAmount">
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPurpose">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:labelFor="@+id/amountUsed"
-            android:text="@string/amount"/>
+            android:text="@string/amount" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/amountUsed"
@@ -102,19 +264,19 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomIncome"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomAmount"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomIncome">
+        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
+        app:layout_constraintTop_toBottomOf="@id/guidelineBottomAmount">
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:labelFor="@+id/amountUsed"
-            android:text="@string/amount"/>
+            android:text="@string/amount" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/incomePaid"
@@ -133,11 +295,11 @@
         android:layout_width="290dp"
         android:layout_height="55dp"
         android:background="@drawable/blue_background"
+        android:fontFamily="@font/poppins_light"
         android:text="@string/save"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:fontFamily="@font/poppins_light"
         app:layout_constraintBottom_toBottomOf="@id/guidelineMrgBottom"
         app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
         app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
@@ -170,48 +332,83 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.23" />
+        app:layout_constraintGuide_percent="0.58" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.33" />
+        app:layout_constraintGuide_percent="0.66" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomPurpose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.43" />
+        app:layout_constraintGuide_percent="0.74" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.53" />
+        app:layout_constraintGuide_percent="0.82" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomIncome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.63" />
+        app:layout_constraintGuide_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomTopSaveBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.77" />
+        app:layout_constraintGuide_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMrgBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.90" />
+        app:layout_constraintGuide_percent="0.98" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomMedExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.17" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomFedExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomLabourExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomMaintenanceExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.41" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomMeatIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.49" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

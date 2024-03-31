@@ -30,7 +30,9 @@ public class PoultryHealthFragment extends Fragment {
         // saving the health record
         poultryHealthBinding.saveHealthDetails.setOnClickListener(view -> {
             // accessing the details
+            String batch = Objects.requireNonNull(poultryHealthBinding.batch.getText()).toString();
             String area = Objects.requireNonNull(poultryHealthBinding.collectionArea.getText()).toString();
+            String medication = Objects.requireNonNull(poultryHealthBinding.vacOrMed.getText()).toString();
             String disease = Objects.requireNonNull(poultryHealthBinding.disease.getText()).toString();
             String vaccine = Objects.requireNonNull(poultryHealthBinding.vaccineName.getText()).toString();
             String date = Objects.requireNonNull(poultryHealthBinding.healthDate.getText()).toString();
@@ -38,14 +40,14 @@ public class PoultryHealthFragment extends Fragment {
             String costOfTreatment = Objects.requireNonNull(poultryHealthBinding.treatmentCost.getText()).toString();
             String vetName = Objects.requireNonNull(poultryHealthBinding.vetName.getText()).toString();
 
-            if(area.isEmpty() || disease.isEmpty() || vaccine.isEmpty() || date.isEmpty() || affectedBirds.isEmpty() || costOfTreatment.isEmpty() || vetName.isEmpty()){
+            if(batch.isEmpty() || area.isEmpty() || medication.isEmpty() || disease.isEmpty() || vaccine.isEmpty() || date.isEmpty() || affectedBirds.isEmpty() || costOfTreatment.isEmpty() || vetName.isEmpty()){
                 Snackbar.make(requireView(),"Please Enter Details in All Fields!",Snackbar.LENGTH_LONG).show();
             }else {
                 boolean cowHealthRedundantData = poultryHealthDB.CheckRedundantData(area,date);
                 if(cowHealthRedundantData){
                     Snackbar.make(requireView(),"Oops! Such details already exists!",Snackbar.LENGTH_LONG).show();
                 }else {
-                   boolean cowHealth = poultryHealthDB.SaveCowHealthRecords(area,disease,vaccine,date,affectedBirds,costOfTreatment,vetName);
+                   boolean cowHealth = poultryHealthDB.SaveCowHealthRecords(batch,area,medication,disease,vaccine,date,affectedBirds,costOfTreatment,vetName);
                    if(cowHealth){
                        Snackbar.make(requireView(),"Poultry Health Record Saved Successfully!",Snackbar.LENGTH_LONG).show();
                    }else{
