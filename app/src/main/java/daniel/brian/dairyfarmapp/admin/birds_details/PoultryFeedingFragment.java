@@ -33,18 +33,22 @@ public class PoultryFeedingFragment extends Fragment {
             // Accessing the details
             String category = Objects.requireNonNull(poultryFeedingBinding.categoryFed.getText()).toString();
             String type = Objects.requireNonNull(poultryFeedingBinding.feedType.getText()).toString();
+            String typeAm = Objects.requireNonNull(poultryFeedingBinding.feedAm.getText()).toString();
+            String typeNoon = Objects.requireNonNull(poultryFeedingBinding.feedNoon.getText()).toString();
+            String typePm = Objects.requireNonNull(poultryFeedingBinding.feedPM.getText()).toString();
+            String feedingPerson = Objects.requireNonNull(poultryFeedingBinding.feedPerson.getText()).toString();
             String quantity = Objects.requireNonNull(poultryFeedingBinding.quantityFed.getText()).toString();
             String cost = Objects.requireNonNull(poultryFeedingBinding.feedCost.getText()).toString();
             String date = Objects.requireNonNull(poultryFeedingBinding.datePurchased.getText()).toString();
 
-            if(category.isEmpty() || type.isEmpty() || quantity.isEmpty() || cost.isEmpty() || date.isEmpty()){
+            if(category.isEmpty() || type.isEmpty() || typeAm.isEmpty() || typeNoon.isEmpty() || typePm.isEmpty() || feedingPerson.isEmpty() || quantity.isEmpty() || cost.isEmpty() || date.isEmpty()){
                 Snackbar.make(requireView(),"Please Enter Details in All Fields!",Snackbar.LENGTH_LONG).show();
             }else{
                 boolean cowBreedingRedundantData = poultryFeedingDB.CheckRedundantData(category,date);
                 if(cowBreedingRedundantData){
                     Snackbar.make(requireView(),"Oops! Such Details Already Exists!",Snackbar.LENGTH_LONG).show();
                 }else{
-                    boolean cowBreeding = poultryFeedingDB.SavePoultryFeedingRecords(category,type,quantity,cost,date);
+                    boolean cowBreeding = poultryFeedingDB.SavePoultryFeedingRecords(category,type,typeAm,typeNoon,typePm,feedingPerson,quantity,cost,date);
                     if(cowBreeding){
                         Snackbar.make(requireView(),"Poultry Feeding Details Saved Successfully!",Snackbar.LENGTH_LONG).show();
                     }else{

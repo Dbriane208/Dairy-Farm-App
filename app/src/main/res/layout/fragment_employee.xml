@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#33A5DDFE"
-    tools:context=".admin.birds_details.PoultryFeedingFragment">
+    tools:context=".employee.EmployeeFragment">
 
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#32addf"
-        android:title="@string/feeding"
+        android:title="@string/employeeDetails"
         android:titleMarginStart="45dp"
         android:titleTextAppearance="@style/h4"
         android:titleTextColor="@color/white"
@@ -32,14 +32,14 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/categoryFed"
-            android:text="@string/cFeed" />
+            android:labelFor="@+id/arrivalTime"
+            android:text="@string/arriveTime" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/categoryFed"
+            android:id="@+id/arrivalTime"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/cFeed"
+            android:hint="@string/arriveTime"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -59,14 +59,14 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/feedType"
-            android:text="@string/feedT" />
+            android:labelFor="@+id/employeeId"
+            android:text="@string/employeeId" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/feedType"
+            android:id="@+id/employeeId"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/feedT"
+            android:hint="@string/employeeId"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -86,14 +86,14 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/feedAm"
-            android:text="@string/feedAm" />
+            android:labelFor="@+id/activitiesDone"
+            android:text="@string/activities" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/feedAm"
+            android:id="@+id/activitiesDone"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/feedAm"
+            android:hint="@string/activities"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -113,14 +113,14 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/feedNoon"
-            android:text="@string/feedNoon" />
+            android:labelFor="@+id/gender"
+            android:text="@string/gender" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/feedNoon"
+            android:id="@+id/gender"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/feedNoon"
+            android:hint="@string/gender"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -140,14 +140,14 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/feedPM"
-            android:text="@string/feedPm" />
+            android:labelFor="@+id/workerName"
+            android:text="@string/workerName" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/feedPM"
+            android:id="@+id/workerName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/feedPm"
+            android:hint="@string/workerName"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -167,14 +167,14 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/feedPerson"
-            android:text="@string/feedPerson" />
+            android:labelFor="@+id/employeeRole"
+            android:text="@string/role" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/feedPerson"
+            android:id="@+id/employeeRole"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/feedPerson"
+            android:hint="@string/role"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -194,14 +194,14 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:labelFor="@+id/quantityFed"
-            android:text="@string/feedQ" />
+            android:labelFor="@+id/departureTime"
+            android:text="@string/timeOut" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/quantityFed"
+            android:id="@+id/departureTime"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="@string/feedQ"
+            android:hint="@string/timeOut"
             android:textColor="@color/black"
             android:textColorHighlight="#32addf"
             android:textColorHint="#546E7A"
@@ -209,62 +209,9 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomPDate"
-        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomBreedDate">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:labelFor="@+id/feedCost"
-            android:text="@string/feedC" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/feedCost"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="@string/feedC"
-            android:textColor="@color/black"
-            android:textColorHighlight="#32addf"
-            android:textColorHint="#546E7A"
-            tools:ignore="TextContrastCheck" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineBottomDateCalved"
-        app:layout_constraintEnd_toEndOf="@id/guidelineMrgEnd"
-        app:layout_constraintStart_toStartOf="@id/guidelineMrgStart"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottomPDate">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:labelFor="@+id/datePurchased"
-            android:text="@string/purchased" />
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/datePurchased"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:hint="@string/purchased"
-            android:textColor="@color/black"
-            android:textColorHighlight="#32addf"
-            android:textColorHint="#546E7A"
-            tools:ignore="TextContrastCheck" />
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
-        android:id="@+id/saveFeedingDetails"
+        android:id="@+id/saveEmployeeDetails"
         android:layout_width="290dp"
         android:layout_height="55dp"
         android:background="@drawable/blue_background"
@@ -333,21 +280,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.79" />
+        app:layout_constraintGuide_percent="0.76" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomDateCalved"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.87" />
+        app:layout_constraintGuide_percent="0.76" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineMrgBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.97" />
+        app:layout_constraintGuide_percent="0.87" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineBottomFeed"

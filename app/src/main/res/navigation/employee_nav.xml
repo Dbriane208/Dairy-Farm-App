@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_employeeHomeFragment_to_chickenSalesFragment"
             app:destination="@id/chickenSalesFragment" />
+        <action
+            android:id="@+id/action_employeeHomeFragment_to_employeeFragment"
+            app:destination="@id/employeeFragment" />
     </fragment>
     <fragment
         android:id="@+id/eggsSalesFragment"
@@ -27,4 +30,9 @@
         android:name="daniel.brian.dairyfarmapp.employee.ChickenSalesFragment"
         android:label="fragment_chicken_sales"
         tools:layout="@layout/fragment_chicken_sales" />
+    <fragment
+        android:id="@+id/employeeFragment"
+        android:name="daniel.brian.dairyfarmapp.employee.EmployeeFragment"
+        android:label="fragment_employee"
+        tools:layout="@layout/fragment_employee" />
 </navigation>

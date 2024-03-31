@@ -53,6 +53,12 @@ public class AdminHomeFragment extends Fragment {
             navController.navigate(R.id.action_adminHomeFragment_to_financesFragment);
         });
 
+        // databases
+        fragmentAdminHomeBinding.databasesAdd.setOnClickListener(view -> {
+            NavController navController = Navigation.findNavController(view);
+            navController.navigate(R.id.action_adminHomeFragment_to_databasesFragment2);
+        });
+
         return fragmentAdminHomeBinding.getRoot();
     }
 }

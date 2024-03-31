@@ -34,6 +34,13 @@ public class EmployeeHomeFragment extends Fragment {
             navController.navigate(R.id.action_employeeHomeFragment_to_chickenSalesFragment);
         });
 
+        // Navigating to employee details
+        employeeHomeBinding.employeeDetailsAdd.setOnClickListener(view1 -> {
+            NavController controller = Navigation.findNavController(view1);
+            controller.navigate(R.id.action_employeeHomeFragment_to_employeeFragment);
+
+        });
+
         return employeeHomeBinding.getRoot();
     }
 }

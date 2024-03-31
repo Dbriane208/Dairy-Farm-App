@@ -11,13 +11,15 @@ import androidx.annotation.Nullable;
 
 public class PoultryHealthDB extends SQLiteOpenHelper {
     public PoultryHealthDB(@Nullable Context context) {
-        super(context, "PoultryHealth.db", null, 3);
+        super(context, "PoultryHealth.db", null, 4);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("Create Table PoultryHealth(" +
+                "BatchName varchar(10) not null,"+
                 "Category_Affected varchar(10) not null," +
+                "Medication varchar(10) not null,"+
                 "Disease_Name varchar(20) not null," +
                 "Vaccine_Name varchar(50) not null," +
                 "Date DATE not null," +
@@ -32,10 +34,12 @@ public class PoultryHealthDB extends SQLiteOpenHelper {
     }
 
     // saving the cows health Details
-    public boolean SaveCowHealthRecords(String category, String disease, String vaccine, String date, String birdsAffected, String costOfTreatment, String vetName){
+    public boolean SaveCowHealthRecords(String batch,String category,String medication, String disease, String vaccine, String date, String birdsAffected, String costOfTreatment, String vetName){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put("BatchName",batch);
         contentValues.put("Category_Affected",category);
+        contentValues.put("Medication",medication);
         contentValues.put("Disease_Name",disease);
         contentValues.put("Vaccine_Name",vaccine);
         contentValues.put("Date",date);

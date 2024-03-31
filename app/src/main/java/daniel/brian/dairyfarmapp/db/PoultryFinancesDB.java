@@ -17,12 +17,17 @@ public class PoultryFinancesDB extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
          db.execSQL("Create Table cowFinances(" +
-                 "Finance_id integer primary key not null," +
+                 "MedicExpense Text not null,"+
+                 "FeedExpense Text not null,"+
+                 "LabourExpense Text not null,"+
+                 "MaintenanceExpense Text not null,"+
+                 "EggsSales Text not null,"+
+                 "MeatSales Text not null,"+
                  "Date DATE not null," +
                  "Purpose varchar(50) not null," +
                  "Amount Text not null," +
-                 "Income Text not null," +
-                 "constraint cowFinance unique(Finance_id,Date,Purpose,Amount))");
+                 "Income Text not null)"
+         );
     }
 
     @Override
@@ -31,9 +36,15 @@ public class PoultryFinancesDB extends SQLiteOpenHelper {
     }
 
     // function to save the Finances
-    public boolean SaveCowFinancesRecords(String date, String purpose, String amount, String income){
+    public boolean SaveCowFinancesRecords(String medic,String feed,String labour,String maintain,String eggsSale,String meatSale,String date, String purpose, String amount, String income){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put("MedicExpense",medic);
+        contentValues.put("FeedExpense",feed);
+        contentValues.put("LabourExpense",labour);
+        contentValues.put("MaintenanceExpense",maintain);
+        contentValues.put("EggsSales",eggsSale);
+        contentValues.put("MeatSales",meatSale);
         contentValues.put("Date",date);
         contentValues.put("Purpose",purpose);
         contentValues.put("Amount",amount);

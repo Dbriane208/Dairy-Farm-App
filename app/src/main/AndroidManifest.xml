@@ -13,6 +13,30 @@
         android:theme="@style/Theme.DairyFarmApp"
         tools:targetApi="31">
         <activity
+            android:name=".view_db.EmployeeDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view_db.ChickenSalesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view_db.EggsSaleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view_db.FinancesReportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view_db.PoultryFeedingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view_db.PoultryHealthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view_db.PoultryProductionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view_db.PoultryDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".employee.EmployeeActivity"
             android:exported="false" />
         <activity
