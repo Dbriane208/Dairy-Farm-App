@@ -56,4 +56,9 @@ public class PoultryFeedingDB extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from PoultryFeeding where Category_Fed = ? and Feed_Purchase_Date = ?",new String[]{category,age});
         return cursor.getCount() > 0;
     }
+
+    public Cursor getPoultryFeeding(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.rawQuery("select * from PoultryFeeding ",null);
+    }
 }

@@ -53,4 +53,8 @@ public class EmployeeDetailsDB extends SQLiteOpenHelper {
         return cursor.getCount() > 0;
     }
 
+    public Cursor getEmployeeDetails(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.rawQuery("select * from EmployeeDetails ",null);
+    }
 }
