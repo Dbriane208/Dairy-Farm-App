@@ -52,4 +52,9 @@ public class ChickenSalesDB extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from chickenSales where Client_Name = ? and Client_Phone = ?",new String[]{name,phone});
         return cursor.getCount() > 0;
     }
+
+    public Cursor getChickenSales(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.rawQuery("select * from chickenSales ",null);
+    }
 }

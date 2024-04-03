@@ -59,4 +59,9 @@ public class PoultryFinancesDB extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from cowFinances where Date = ? and Purpose = ?",new String[]{date,purpose});
         return cursor.getCount() > 0;
     }
+
+    public Cursor getFinancesReports(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.rawQuery("select * from cowFinances ",null);
+    }
 }

@@ -56,4 +56,9 @@ public class PoultryHealthDB extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from PoultryHealth where Category_Affected = ? and Date = ?",new String[]{category,date});
         return cursor.getCount() > 0;
     }
+
+    public Cursor getPoultryHealth(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.rawQuery("select * from PoultryHealth ",null);
+    }
 }

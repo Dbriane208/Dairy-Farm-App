@@ -58,4 +58,9 @@ public class PoultryProductionDB extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from PoultryProduction where Collection_Area = ? and Collection_Date = ?",new String[]{area,date});
         return cursor.getCount() > 0;
     }
+
+    public Cursor getPoultryProduction(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.rawQuery("select * from PoultryProduction ",null);
+    }
 }
