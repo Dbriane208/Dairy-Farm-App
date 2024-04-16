@@ -1,33 +1,26 @@
 package daniel.brian.dairyfarmapp.view_db;
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import daniel.brian.dairyfarmapp.R;
 import daniel.brian.dairyfarmapp.adapters.PoultryFeedingAdapter;
-import daniel.brian.dairyfarmapp.adapters.PoultryHealthAdapter;
 import daniel.brian.dairyfarmapp.databinding.ActivityPoultryFeedingBinding;
-import daniel.brian.dairyfarmapp.databinding.ActivityPoultryHealthBinding;
 import daniel.brian.dairyfarmapp.db.PoultryFeedingDB;
-import daniel.brian.dairyfarmapp.db.PoultryHealthDB;
 
 public class PoultryFeedingActivity extends AppCompatActivity {
     ActivityPoultryFeedingBinding poultryFeedingBinding;
     RecyclerView recyclerView;
     PoultryFeedingDB poultryFeedingDB;
     PoultryFeedingAdapter poultryFeedingAdapter;
-    ArrayList<String> categoryFed, feedType, amFeed, noonFeed, pmFeed, costFeed;
+    ArrayList<String> categoryFed, feedType, amFeed, noonFeed, pmFeed, servedBy,totalFeed, costFeed,purchaseDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,15 +34,19 @@ public class PoultryFeedingActivity extends AppCompatActivity {
         amFeed = new ArrayList<>();
         noonFeed = new ArrayList<>();
         pmFeed = new ArrayList<>();
+        servedBy = new ArrayList<>();
+        totalFeed = new ArrayList<>();
         costFeed = new ArrayList<>();
+        purchaseDate = new ArrayList<>();
 
         recyclerView = poultryFeedingBinding.poultryFeedingRV;
-        poultryFeedingAdapter = new PoultryFeedingAdapter(this,categoryFed, feedType, amFeed, noonFeed, pmFeed, costFeed);
+        poultryFeedingAdapter = new PoultryFeedingAdapter(this,categoryFed, feedType, amFeed, noonFeed, pmFeed, servedBy,totalFeed,costFeed,purchaseDate);
         recyclerView.setAdapter(poultryFeedingAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         displayData();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private void displayData() {
         Cursor cursor = poultryFeedingDB.getPoultryFeeding();
         if (cursor.getCount() == 0) {
@@ -62,7 +59,10 @@ public class PoultryFeedingActivity extends AppCompatActivity {
                 amFeed.add(cursor.getString(2));
                 noonFeed.add(cursor.getString(3));
                 pmFeed.add(cursor.getString(4));
-                costFeed.add(cursor.getString(5));
+                servedBy.add(cursor.getString(5));
+                totalFeed.add(cursor.getString(6));
+                costFeed.add(cursor.getString(7));
+                purchaseDate.add(cursor.getString(8));
             }
 
             // Move the adapter update here to make sure it gets updated with the new data

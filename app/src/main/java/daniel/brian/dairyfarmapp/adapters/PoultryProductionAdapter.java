@@ -13,11 +13,12 @@ import daniel.brian.dairyfarmapp.databinding.PoultryProductionRvBinding;
 
 public class PoultryProductionAdapter extends RecyclerView.Adapter<PoultryProductionAdapter.PoultryProductionViewHolder> {
 
-    private ArrayList batchName, meatProduction, servedBy, timeProduced, collectionArea, collectionDate;
+    private ArrayList batchName, meatProduction, servedBy, timeProduced, collectionArea, collectionDate,totalEggsCollected,goodEggsCollected,brokenEggsCollected,totalTraysCollected;
     private Context context;
 
 
-    public PoultryProductionAdapter(Context context, ArrayList batchName, ArrayList meatProduction, ArrayList servedBy, ArrayList timeProduced, ArrayList collectionArea, ArrayList collectionDate) {
+    public PoultryProductionAdapter(Context context, ArrayList batchName, ArrayList meatProduction, ArrayList servedBy, ArrayList timeProduced, ArrayList collectionArea, ArrayList collectionDate,
+    ArrayList totalEggsCollected,ArrayList goodEggsCollected, ArrayList brokenEggsCollected, ArrayList totalTraysCollected) {
         this.context = context;
         this.batchName = batchName;
         this.meatProduction = meatProduction;
@@ -25,6 +26,10 @@ public class PoultryProductionAdapter extends RecyclerView.Adapter<PoultryProduc
         this.timeProduced = timeProduced;
         this.collectionArea = collectionArea;
         this.collectionDate = collectionDate;
+        this.totalEggsCollected = totalEggsCollected;
+        this.goodEggsCollected = goodEggsCollected;
+        this.brokenEggsCollected = brokenEggsCollected;
+        this.totalTraysCollected = totalTraysCollected;
     }
 
     @NonNull
@@ -43,6 +48,10 @@ public class PoultryProductionAdapter extends RecyclerView.Adapter<PoultryProduc
         holder.poultryProductionRvBinding.timeProduced.setText(String.valueOf(timeProduced.get(position)));
         holder.poultryProductionRvBinding.collectionArea.setText(String.valueOf(collectionArea.get(position)));
         holder.poultryProductionRvBinding.collectionDate.setText(String.valueOf(collectionDate.get(position)));
+        holder.poultryProductionRvBinding.eggsCollected.setText(String.valueOf(totalEggsCollected.get(position)));
+        holder.poultryProductionRvBinding.goodEggs.setText(String.valueOf(goodEggsCollected.get(position)));
+        holder.poultryProductionRvBinding.brokenEggs.setText(String.valueOf(brokenEggsCollected.get(position)));
+        holder.poultryProductionRvBinding.totalTrays.setText(String.valueOf(totalTraysCollected.get(position)));
 
     }
 
