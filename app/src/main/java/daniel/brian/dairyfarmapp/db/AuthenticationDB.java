@@ -56,6 +56,4 @@ public class AuthenticationDB extends SQLiteOpenHelper {
         long forgotPass = db.update("users",contentValues,"email = ?",new String[]{email});
         return forgotPass != -1;
     }
-
-    // update function
 }

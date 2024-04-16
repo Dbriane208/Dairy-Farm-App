@@ -26,7 +26,7 @@ public class FinancesReportActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     PoultryFinancesDB poultryFinancesDB;
     FinancesReportAdapter financesReportAdapter;
-    ArrayList<String> medicalExpenses, feedExpenses, labourExpenses, expenditure, totalExpenses, totalIncome;
+    ArrayList<String> medicalExpenses, feedExpenses, labourExpenses,maintenanceExpenses,eggsSales,meatSales,usageDate, expenditure, totalExpenses, totalIncome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +38,16 @@ public class FinancesReportActivity extends AppCompatActivity {
         medicalExpenses = new ArrayList<>();
         feedExpenses = new ArrayList<>();
         labourExpenses = new ArrayList<>();
+        maintenanceExpenses = new ArrayList<>();
+        eggsSales = new ArrayList<>();
+        meatSales = new ArrayList<>();
+        usageDate = new ArrayList<>();
         expenditure = new ArrayList<>();
         totalExpenses = new ArrayList<>();
         totalIncome = new ArrayList<>();
 
         recyclerView = financesReportBinding.financesReportRV;
-        financesReportAdapter = new FinancesReportAdapter(this,medicalExpenses, feedExpenses, labourExpenses, expenditure, totalExpenses, totalIncome);
+        financesReportAdapter = new FinancesReportAdapter(this,medicalExpenses, feedExpenses, labourExpenses,maintenanceExpenses,eggsSales,meatSales,usageDate, expenditure, totalExpenses, totalIncome);
         recyclerView.setAdapter(financesReportAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         displayData();
@@ -59,9 +63,13 @@ public class FinancesReportActivity extends AppCompatActivity {
                 medicalExpenses.add(cursor.getString(0));
                 feedExpenses.add(cursor.getString(1));
                 labourExpenses.add(cursor.getString(2));
-                expenditure.add(cursor.getString(3));
-                totalExpenses.add(cursor.getString(4));
-                totalIncome.add(cursor.getString(5));
+                maintenanceExpenses.add(cursor.getString(3));
+                eggsSales.add(cursor.getString(4));
+                meatSales.add(cursor.getString(5));
+                usageDate.add(cursor.getString(6));
+                expenditure.add(cursor.getString(7));
+                totalExpenses.add(cursor.getString(8));
+                totalIncome.add(cursor.getString(9));
             }
 
             // Move the adapter update here to make sure it gets updated with the new data

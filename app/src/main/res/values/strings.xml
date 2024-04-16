@@ -181,4 +181,14 @@
     <string name="employee_name">Employee name :</string>
     <string name="employee_role">Employee role :</string>
     <string name="departure_time">Departure time :</string>
+    <string name="Maintenance_expenses">Maintenance Expenses :</string>
+    <string name="eggs_sale">Eggs sales :</string>
+    <string name="meat_sales">Meat sales :</string>
+    <string name="usage_expenses">"Usage : "</string>
+    <string name="total_feed">"Feed Amount : "</string>
+    <string name="purchase_date">Date Purchased :</string>
+    <string name="total_trays">Total trays collected :</string>
+    <string name="broken_eggs">No. of broken eggs :</string>
+    <string name="good_eggs">No. of good eggs :</string>
+    <string name="eggs_collected">No. of eggs collected :</string>
 </resources>

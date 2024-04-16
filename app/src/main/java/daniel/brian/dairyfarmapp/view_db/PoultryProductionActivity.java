@@ -26,7 +26,8 @@ public class PoultryProductionActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     PoultryProductionDB poultryProductionDB;
     PoultryProductionAdapter poultryProductionAdapter;
-    ArrayList<String> batchName, meatProduction, servedBy, timeProduced, collectionArea, collectionDate;
+    ArrayList<String> batchName, meatProduction, servedBy, timeProduced, collectionArea, collectionDate,
+            totalEggsCollected,goodEggsCollected,brokenEggsCollected,totalTraysCollected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +42,14 @@ public class PoultryProductionActivity extends AppCompatActivity {
         timeProduced = new ArrayList<>();
         collectionArea = new ArrayList<>();
         collectionDate = new ArrayList<>();
+        totalEggsCollected = new ArrayList<>();
+        goodEggsCollected = new ArrayList<>();
+        brokenEggsCollected = new ArrayList<>();
+        totalTraysCollected = new ArrayList<>();
 
         recyclerView = poultryProductionBinding.poultryProductionRV;
-        poultryProductionAdapter = new PoultryProductionAdapter(this,batchName, meatProduction, servedBy, timeProduced, collectionArea, collectionDate);
+        poultryProductionAdapter = new PoultryProductionAdapter(this,batchName, meatProduction, servedBy, timeProduced, collectionArea, collectionDate,totalEggsCollected,
+                goodEggsCollected,brokenEggsCollected,totalTraysCollected);
         recyclerView.setAdapter(poultryProductionAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         displayData();
@@ -62,6 +68,10 @@ public class PoultryProductionActivity extends AppCompatActivity {
                 timeProduced.add(cursor.getString(3));
                 collectionArea.add(cursor.getString(4));
                 collectionDate.add(cursor.getString(5));
+                totalEggsCollected.add(cursor.getString(6));
+                goodEggsCollected.add(cursor.getString(7));
+                brokenEggsCollected.add(cursor.getString(8));
+                totalTraysCollected.add(cursor.getString(9));
             }
 
             // Move the adapter update here to make sure it gets updated with the new data
